@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default " en-us" }}">
+
+<head>
+    {{ partial "head" . }}
+</head>
+
+<body>
+    <div class="fullpage">
+        <div class="main_grid">
+            <header class="name_tag">
+                {{ with resources.Get "svgs/nametag.svg" }}
+                <img src="{{ .RelPermalink }}" />
+                {{ end }}
+            </header>
+
+            <div class="introduction">
+                <p>{{ .Page.Summary }}</p>
+            </div>
+
+            <nav class="nav_links">
+                <ul>
+                    <li class="first">
+                        <a href="https://www.youtube.com/@Ms.KierstensMusicCorner">
+                            <box-icon type='solid' name='video' size="lg"></box-icon> 
+                            <p>My Videos</p>
+                        </a>
+                    </li>
+                    <li class="second">
+                        {{ with .Site.GetPage "/music" }}
+                        <a href="{{ .RelPermalink }}">
+                            <box-icon type='solid' name='music' size="lg"></box-icon>
+                            <p>My Music</p>
+                        </a>
+                        {{ end }}
+                    </li>
+
+                    <li class="third">
+                        <a href="mailto:mskierstenmusic@gmail.com">
+                            <box-icon type='solid' name='envelope'size="lg"></box-icon>
+                            <p>Contact Me</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            {{ with resources.Get "images/kiersten-smile-small.png"}}
+            <img class="hero_image" src="{{ .RelPermalink }}" />
+            {{ end }}
+
+            <div class="content-box">
+                <article class="content">
+                    {{ .Page.Content }}
+                </article>
+            </div>
+
+        </div>
+
+        <h2>Photo Gallery</h2>
+        <div class="photos">
+            {{ range slice 
+                "images/candid-04.jpg"
+                "images/blue-bunny-candid-01.jpg" 
+                "images/blue-bunny-candid-02.jpg"
+                "images/candid-03.jpg"
+                "images/signing.jpeg"
+                "images/author.jpeg"
+            }}
+                {{ with resources.Get . }}
+                    {{ if  gt .Width .Height}}
+                        {{ with .Resize "600x" }}
+                            <img class="landscape" loading="lazy" src="{{ .RelPermalink }}" />
+                        {{ end }}
+                    {{ else }}
+                        {{ with .Resize "x600" }}
+                            <img class="portrait" loading="lazy" src="{{ .RelPermalink }}" />
+                        {{ end }} 
+                    {{ end }}  
+                {{ end }}
+            {{ end }}
+        </div>
+
+        <footer>
+            <p class="copyright">&copy2024 Kiersten Case</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

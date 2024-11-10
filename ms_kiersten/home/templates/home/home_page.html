@@ -1,21 +1,65 @@
 {% extends "base.html" %}
+
+{% load wagtailcore_tags %}
 {% load static %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+<div class="fullpage">
+    <div class="main_grid">
+        <header class="name_tag">
+            <img src="{{ .RelPermalink }}" />
+        </header>
+
+        <div class="introduction">
+            {{ page.headline|richtext }}
+        </div>
+
+        <nav class="nav_links">
+            <ul>
+                <li class="first">
+                    <a href="https://www.youtube.com/@Ms.KierstensMusicCorner">
+                        <box-icon type='solid' name='video' size="lg"></box-icon> 
+                        <p>My Videos</p>
+                    </a>
+                </li>
+                <li class="second">
+                    <a href="{{ .RelPermalink }}">
+                        <box-icon type='solid' name='music' size="lg"></box-icon>
+                        <p>My Music</p>
+                    </a>
+                </li>
+
+                <li class="third">
+                    <a href="mailto:mskierstenmusic@gmail.com">
+                        <box-icon type='solid' name='envelope'size="lg"></box-icon>
+                        <p>Contact Me</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <img class="hero_image" src="{{ .RelPermalink }}" />
+
+
+        <div class="content-box">
+            <article class="content">
+                {{ page.biography|richtext }}
+            </article>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="copyright">&copy2024 Kiersten Case</p>
+    </footer>
+
+</div>
 
 {% endblock content %}
