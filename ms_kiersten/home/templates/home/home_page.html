@@ -23,25 +23,14 @@
 
         <nav class="nav_links">
             <ul>
-                <li class="first">
-                    <a href="https://www.youtube.com/@Ms.KierstensMusicCorner">
-                        <box-icon type='solid' name='video' size="lg"></box-icon> 
-                        <p>My Videos</p>
+                {% for link in page.home_menu_links.all %}
+                <li>
+                    <a href={% firstof link.external_url link.page_link.get_url %}>
+                        <box-icon type='solid' name='{{ link.boxicons_icon_name }}' size="lg"></box-icon> 
+                        <p>{{ link.name }}</p>
                     </a>
                 </li>
-                <li class="second">
-                    <a href="{{ .RelPermalink }}">
-                        <box-icon type='solid' name='music' size="lg"></box-icon>
-                        <p>My Music</p>
-                    </a>
-                </li>
-
-                <li class="third">
-                    <a href="mailto:mskierstenmusic@gmail.com">
-                        <box-icon type='solid' name='envelope'size="lg"></box-icon>
-                        <p>Contact Me</p>
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </nav>
 
