@@ -1,0 +1,23 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<div class="contentpage">
+    <h2>{{ page.album_title }}</h2>
+    {% image page.album_cover_image original class="album-art" %}
+    <a href="{{ page.album_streaming_link }}">
+        <h3><u>listen now!</u></h3>
+    </a>
+    <div class="content-box">
+        <article class="content">
+           {{ page.description|richtext }}
+        </article>
+    </div>
+
+    <footer>
+        <p class="copyright">&copy2024 Kiersten Case</p>
+    </footer>
+</div>
+
+{% endblock %}

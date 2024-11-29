@@ -16,8 +16,8 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('headline'),
-        InlinePanel('home_menu_links', heading='Menu Links', label='link'),
         FieldPanel('biography'),
+        InlinePanel('home_menu_links', heading='Menu Links', label='link', classname="collapsed"),
     ]
 
 class HomePageMenuLink(Orderable):

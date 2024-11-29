@@ -14,7 +14,7 @@
 <div class="fullpage">
     <div class="main_grid">
         <header class="name_tag">
-            <img src="{{ .RelPermalink }}" />
+            <img src="{% static "images/nametag.svg" %}" />
         </header>
 
         <div class="introduction">
@@ -25,7 +25,11 @@
             <ul>
                 {% for link in page.home_menu_links.all %}
                 <li>
-                    <a href={% firstof link.external_url link.page_link.get_url %}>
+                    {% if link.external_url %}
+                    <a href={{link.external_url }}>
+                    {% else %}
+                    <a href={% pageurl link.page_link %}>
+                    {% endif %}
                         <box-icon type='solid' name='{{ link.boxicons_icon_name }}' size="lg"></box-icon> 
                         <p>{{ link.name }}</p>
                     </a>
@@ -34,7 +38,7 @@
             </ul>
         </nav>
 
-        <img class="hero_image" src="{{ .RelPermalink }}" />
+        <img class="hero_image" src="{% static "images/kiersten-smile.png" %}" />
 
 
         <div class="content-box">
