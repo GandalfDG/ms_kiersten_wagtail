@@ -4,10 +4,11 @@ from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel
 
+
 class AlbumPage(Page):
     album_title = models.TextField()
     album_cover_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL,
-                                  related_name="+", null=True)
+                                          related_name="+", null=True)
 
     description = RichTextField()
     album_streaming_link = models.URLField(null=True)
@@ -18,6 +19,7 @@ class AlbumPage(Page):
         FieldPanel("description"),
         FieldPanel("album_streaming_link")
     ]
+
 
 class BlogPost(Page):
     post_summary = RichTextField()
@@ -32,5 +34,12 @@ class BlogPost(Page):
         FieldPanel("post_content")
     ]
 
+
 class BlogList(Page):
-    pass
+    blog_headline = RichTextField()
+
+    content_panels = Page.content_panels + [
+        FieldPanel("blog_headline")
+    ]
+
+    subpage_types = ["ms_kiersten.BlogPost"]
