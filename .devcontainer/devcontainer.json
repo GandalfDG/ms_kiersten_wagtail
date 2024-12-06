@@ -16,6 +16,17 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install --user -r ms_kiersten/requirements.txt",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"batisteo.vscode-django",
+				"ms-python.vscode-pylance",
+				"ms-python.autopep8",
+				"ms-python.python",
+				"ms-python.debugpy"
+			]
+		}
+	},
 
 	// Configure tool-specific properties.
 	// "customizations": {},
