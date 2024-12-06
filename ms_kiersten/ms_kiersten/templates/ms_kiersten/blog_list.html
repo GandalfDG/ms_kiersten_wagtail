@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block content %}
 <h1>{{ page.title }}</h1>
-
 <p>{{ page.blog_headline|richtext }}</p>
+
+<ol>
+    {% for post in page.get_children %}
+    <li>
+        <hgroup><a href={% pageurl post %}>
+            {% image post.specific.post_cover_image max-200x200 %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.specific.post_summary|richtext }}</p>
+        </a></hgroup>
+    </li>
+    {% endfor %}
+</ol>
 
 {% endblock %}

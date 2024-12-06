@@ -24,7 +24,8 @@ class AlbumPage(Page):
 class BlogPost(Page):
     post_summary = RichTextField()
 
-    post_cover_image = models.ImageField()
+    post_cover_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL,
+                                         related_name="+", null=True)
 
     post_content = RichTextField()
 
