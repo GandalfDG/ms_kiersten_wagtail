@@ -4,21 +4,23 @@
 {% load wagtailimages_tags %}
 
 {% block content %}
-<h1>{{ page.title }}</h1>
+<div class="contentpage">
+<h2>{{ page.title }}</h2>
 <p>{{ page.blog_headline|richtext }}</p>
 
 <ol>
     {% for post in page.get_children %}
     <li>
         <a href={% pageurl post %} class="blogpost">
-        <div>
+        <div class="postblock">
             {% image post.specific.post_cover_image max-200x200 %}
-            <h2>{{ post.title }}</h2>
+            <h3>{{ post.title }}</h3>
             <p>{{ post.specific.post_summary|richtext }}</p>
         </div>
         </a>
     </li>
     {% endfor %}
 </ol>
+</div>
 
 {% endblock %}

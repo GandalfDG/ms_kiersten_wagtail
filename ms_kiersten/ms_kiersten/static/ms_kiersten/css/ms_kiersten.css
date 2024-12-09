@@ -43,7 +43,7 @@ a {
     text-decoration: none;
 }
 
-ul {
+ul, ol {
     list-style-type: none;
 }
 
@@ -378,4 +378,32 @@ h3 {
     img.album-art {
         max-width: 600px;
     }
+}
+
+.contentpage ol {
+    padding-left: 0;
+}
+
+.postblock {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto;
+    background-color: var(--yellow-color);
+    margin-block: .5em;
+    padding: .5em;
+}
+
+.postblock img {
+    grid-column: 1 / 2;
+    grid-row: 1/3
+}
+
+.postblock h3 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.postblock p {
+    grid-column: 2/3;
+    grid-row: 2/3
 }
