@@ -17,6 +17,7 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('headline'),
         FieldPanel('biography'),
+        InlinePanel('photo_gallery', heading='Photo Gallery', label='photo'),
         InlinePanel('home_menu_links', heading='Menu Links', label='link', classname="collapsed"),
     ]
 
@@ -38,5 +39,17 @@ class HomePageMenuLink(Orderable):
         FieldPanel('name'),
         FieldPanel('boxicons_icon_name'),
         FieldRowPanel((external_url_panel, internal_page_panel))
+    ]
 
+class PhotoGalleryImage(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name="photo_gallery")
+
+    photo = models.ForeignKey("wagtailimages.Image", on_delete=models.PROTECT,
+                              related_name="+")
+    
+    caption = RichTextField(null=True, blank=True)
+
+    panels = [
+        FieldPanel('photo'),
+        FieldPanel('caption'),
     ]
