@@ -13,7 +13,7 @@
     <li>
         <a href={% pageurl post %} class="blogpost">
         <div class="postblock">
-            {% image post.specific.post_cover_image max-200x200 %}
+            {% image post.specific.post_cover_image fill-200x200 %}
             <h3>{{ post.title }}</h3>
             <p>{{ post.specific.post_summary|richtext }}</p>
         </div>
