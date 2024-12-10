@@ -45,7 +45,7 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/ms_kiersten.js' %}"></script>
+        {% comment %} <script type="text/javascript" src="{% static 'js/ms_kiersten.js' %}"></script> {% endcomment %}
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
