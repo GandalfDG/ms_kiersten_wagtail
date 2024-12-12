@@ -38,6 +38,13 @@ class BlogPost(Page):
 
 class BlogList(Page):
     blog_headline = RichTextField()
+    
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        
+        context["blog_posts"] = self.get_children().live().order_by("-first_published_at")
+        
+        return context
 
     content_panels = Page.content_panels + [
         FieldPanel("blog_headline")
