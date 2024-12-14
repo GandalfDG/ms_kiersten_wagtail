@@ -394,6 +394,10 @@ h3 {
         "summary summary";
 }
 
+.postinfo {
+    background-color: var(--yellow-color);
+}
+
 .postblock img {
     justify-self: center;
     grid-area: image;
@@ -410,14 +414,24 @@ h3 {
 @media (min-width: 800px) {
 
     .postblock {
-        display: grid;
         grid-template-rows: auto auto auto auto;
+    }
+
+    ol.postlist li:nth-child(odd) .postblock{
         grid-template-areas: 
             ". image"
             "title image"
             "summary image"
             ". image";
-
     }
+
+    ol.postlist li:nth-child(even) .postblock{
+        grid-template-areas: 
+        "image ."
+        "image title"
+        "image summary"
+        "image .";
+    }
+
 }
 

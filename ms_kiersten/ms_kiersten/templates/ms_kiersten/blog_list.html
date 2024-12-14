@@ -8,7 +8,7 @@
 <h2>{{ page.title }}</h2>
 <p>{{ page.blog_headline|richtext }}</p>
 
-<ol>
+<ol class="postlist">
     {% for post in blog_posts %}
     <li>
         <a href={% pageurl post %} class="blogpost">
