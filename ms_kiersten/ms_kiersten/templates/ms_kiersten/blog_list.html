@@ -14,10 +14,12 @@
         <a href={% pageurl post %} class="blogpost">
         <div class="postblock">
             {% image post.specific.post_cover_image fill-200x200 %}
-            <h3>{{ post.title }}</h3>
-            <p class="postdate">{{ post.first_published_at | date }}</p>
-            <div class="postsummary">
-                {{ post.specific.post_summary|richtext}}
+            <div class="postinfo">
+                <h3>{{ post.title }}</h3>
+                <p class="postdate">{{ post.first_published_at | date }}</p>
+                <div class="postsummary">
+                    {{ post.specific.post_summary|richtext}}
+                </div>
             </div>
         </div>
         </a>
