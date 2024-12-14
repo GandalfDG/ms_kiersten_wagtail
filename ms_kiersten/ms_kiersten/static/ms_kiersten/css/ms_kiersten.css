@@ -435,3 +435,21 @@ h3 {
 
 }
 
+.postimage {
+    border-width: 2em;
+    border-color: var(--offwhite-color)
+}
+
+div.postheader {
+    background-color: var(--yellow-color);
+    color: var(--orange-color);
+    margin-bottom: 1em;
+    padding: .5em;
+    rotate: -1deg;
+}
+
+article.postcontent {
+    background-color: var(--offwhite-color);
+    padding: .5em;
+}
+

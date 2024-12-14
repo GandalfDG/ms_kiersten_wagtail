@@ -4,10 +4,12 @@
 {% load wagtailimages_tags %}
 
 {% block content %}
-    {% image page.post_cover_image original %}
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.first_published_at }}</h2>
-    <article>
+    {% image page.post_cover_image original class="postimage" %}
+    <div class="postheader">   
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.first_published_at }}</p>
+    </div>
+    <article class="postcontent">
         {{ page.post_summary|richtext }}
         {{ page.post_content|richtext }}
     </article>
