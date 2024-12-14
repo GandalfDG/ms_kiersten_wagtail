@@ -387,44 +387,37 @@ h3 {
 
 .postblock {
     display: grid;
-    grid-template-rows: auto auto;
-    background-color: var(--yellow-color);
-    margin-block: .5em;
-    padding: .5em;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        ". image"
+        "title image"
+        "summary summary";
 }
 
 .postblock img {
     justify-self: center;
+    grid-area: image;
+}
+
+.postblock h3, .postdate {
+    grid-area: title;
+}
+
+.postsummary {
+    grid-area: summary;
 }
 
 @media (min-width: 800px) {
 
     .postblock {
         display: grid;
-        grid-template-columns: 40% 60%;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            ". image"
+            "title image"
+            "summary image"
+            ". image";
 
-    }
-
-    .postblock img {
-        grid-column: 1 / 2;
-        grid-row: 1/4;
-        justify-self: start
-    }
-
-    .postblock h3 {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
-
-    .postblock .postdate {
-        grid-column: 2/3;
-        grid-row: 2/3;
-    }
-
-    .postblock .postsummary {
-        grid-column: 2/3;
-        grid-row: 3/4;
     }
 }
 
