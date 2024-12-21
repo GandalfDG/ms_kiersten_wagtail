@@ -11,17 +11,16 @@
 <ol class="postlist">
     {% for post in blog_posts %}
     <li>
-        <a href={% pageurl post %} class="blogpost">
-        <div class="postblock">
+        <a href={% pageurl post %} class="blogpost postblock">
+            <div class="blockbg"></div>
             {% image post.specific.post_cover_image fill-200x200 %}
             <div class="postinfo">
                 <h3>{{ post.title }}</h3>
                 <p class="postdate">{{ post.first_published_at | date }}</p>
-                <div class="postsummary">
-                    {{ post.specific.post_summary|richtext}}
-                </div>
             </div>
-        </div>
+            <div class="postsummary">
+                {{ post.specific.post_summary|richtext}}
+            </div>
         </a>
     </li>
     {% endfor %}

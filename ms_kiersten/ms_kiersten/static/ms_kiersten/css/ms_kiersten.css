@@ -381,34 +381,67 @@ h3 {
 }
 
 .contentpage ol {
-    padding-inline: .5em;
+    padding-left: 0;
     width: 90%;
 }
 
 .postblock {
     display: grid;
     grid-template-rows: auto auto auto;
+    grid-template-columns: auto 30vw;
     grid-template-areas: 
         ". image"
         "title image"
         "summary summary";
+
+    margin-block: 1em;
+}
+
+.postblock h3 {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.postblock .blockbg {
+    background-color: var(--yellow-color);
+    grid-area: 2/1 / 4/3;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .postinfo {
-    background-color: var(--yellow-color);
+    grid-area: title;
+    padding: .5em 1em;
 }
 
 .postblock img {
     justify-self: center;
     grid-area: image;
+    width: 85%;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    margin-inline-end: 1em;
+    
+    border-style: solid;
+    border-width: .5em;
+    border-color: var(--offwhite-color);
+
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
-.postblock h3, .postdate {
-    grid-area: title;
+ol.postlist li:nth-child(odd) img {
+    rotate: 2deg;
+}
+
+ol.postlist li:nth-child(even) img {
+    rotate: -2deg;
 }
 
 .postsummary {
     grid-area: summary;
+    padding: .5em 1em;
 }
 
 @media (min-width: 800px) {
@@ -417,7 +450,14 @@ h3 {
         grid-template-rows: auto auto auto auto;
     }
 
+    .postblock .blockbg {
+        background-color: var(--yellow-color);
+        grid-area: 2/1 / 4/3;
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    }
+
     ol.postlist li:nth-child(odd) .postblock{
+        grid-template-columns: auto 30vw;
         grid-template-areas: 
             ". image"
             "title image"
@@ -426,6 +466,7 @@ h3 {
     }
 
     ol.postlist li:nth-child(even) .postblock{
+        grid-template-columns: 30vw auto;
         grid-template-areas: 
         "image ."
         "image title"
