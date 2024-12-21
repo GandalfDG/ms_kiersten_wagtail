@@ -30,7 +30,7 @@ body {
 
 p, h1 {
     margin: 0;
-    font-family: 'Ubuntu Condensed';
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 p {
@@ -365,7 +365,7 @@ img.album-art {
 
 h3 {
     z-index: 10;
-    font-family: 'Ubuntu Condensed';
+    font-family: 'Ubuntu Condensed', serif;
     font-size: 25pt;
     color: var(--orange-color);
     background-color: var(--yellow-color);
@@ -383,6 +383,11 @@ h3 {
 .contentpage ol {
     padding-left: 0;
     width: 90%;
+}
+
+.blogheadline {
+    background-color: var(--offwhite-color);
+    padding: 1rem;
 }
 
 .postblock {

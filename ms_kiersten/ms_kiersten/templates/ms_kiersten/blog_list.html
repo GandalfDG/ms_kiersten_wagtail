@@ -6,7 +6,7 @@
 {% block content %}
 <div class="contentpage">
 <h2>{{ page.title }}</h2>
-<p>{{ page.blog_headline|richtext }}</p>
+<div class="blogheadline">{{ page.blog_headline|richtext }}</div>
 
 <ol class="postlist">
     {% for post in blog_posts %}
