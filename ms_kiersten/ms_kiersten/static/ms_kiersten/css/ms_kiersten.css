@@ -487,6 +487,10 @@ ol.postlist li:nth-child(even) img {
         "image .";
     }
 
+    ol.postlist li:nth-child(even) img {
+        margin-inline: 1em 0;
+    }
+
 }
 
 .postimage {
