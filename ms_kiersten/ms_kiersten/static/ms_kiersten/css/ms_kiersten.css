@@ -14,6 +14,8 @@
 
     --breakpoint-med: 600px;
     --breakpoint-lg: 1200px;
+
+    --drop-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -499,20 +501,35 @@ ol.postlist li:nth-child(even) img {
 }
 
 .postimage {
-    border-width: 2em;
-    border-color: var(--offwhite-color)
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    background-color: var(--offwhite-color);
+    padding: 1em;
+    box-sizing: border-box;
+    box-shadow: var(--drop-shadow);
 }
 
 div.postheader {
     background-color: var(--yellow-color);
     color: var(--orange-color);
-    margin-bottom: 1em;
+    margin-block: .5em 1em;
     padding: .5em;
+    padding-inline-end: 1em;
     rotate: -1deg;
+    box-shadow: var(--drop-shadow);
 }
 
 article.postcontent {
     background-color: var(--offwhite-color);
+    box-sizing: border-box;
     padding: .5em;
+    width: 100%;
+}
+
+article.postcontent img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
 }
 
