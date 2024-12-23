@@ -39,7 +39,7 @@
             </ul>
         </nav>
 
-        <img class="hero_image" src="{% static "images/kiersten-smile.png" %}" />
+        <img class="hero_image" src="{% static "images/kiersten-smile.png" %}" fetchpriority="low" />
 
 
         <div class="content-box">
@@ -48,9 +48,9 @@
             </article>
         </div>
 
-        {% for photo in page.photo_gallery.all %}
+        {% comment %} {% for photo in page.photo_gallery.all %}
             {% image photo.photo max-200x200 %}
-        {% endfor %}
+        {% endfor %} {% endcomment %}
 
     </div>
 
