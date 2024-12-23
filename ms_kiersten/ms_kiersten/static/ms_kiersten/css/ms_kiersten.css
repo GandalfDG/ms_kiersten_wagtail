@@ -453,6 +453,11 @@ ol.postlist li:nth-child(even) img {
 
     .postblock {
         grid-template-rows: auto auto auto auto;
+        margin-block: -1em;
+    }
+
+    .blogheadline {
+        margin-block-end: 1rem;
     }
 
     .postblock .blockbg {
