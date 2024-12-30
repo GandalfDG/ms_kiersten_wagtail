@@ -11,6 +11,7 @@ except ImportError:
 
 STATIC_ROOT = "/var/www/msk_static"
 MEDIA_ROOT = "/var/www/msk_media"
+ALLOWED_HOSTS = ["wagtail.mskiersten.com"]
 
 dotenv.load_dotenv("../msk.env")
 
