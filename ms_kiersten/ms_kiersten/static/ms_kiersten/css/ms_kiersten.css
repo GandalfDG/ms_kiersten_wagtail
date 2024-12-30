@@ -363,7 +363,6 @@ img.album-art {
     background-color: var(--offwhite-color);
     padding: 1em;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
     height: auto;    
     aspect-ratio: auto;
     box-sizing: border-box;
