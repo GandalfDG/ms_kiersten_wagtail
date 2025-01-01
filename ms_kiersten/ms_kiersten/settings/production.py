@@ -9,9 +9,9 @@ try:
 except ImportError:
     pass
 
-STATIC_ROOT = "/var/www/msk_static"
-MEDIA_ROOT = "/var/www/msk_media"
-ALLOWED_HOSTS = ["wagtail.mskiersten.com"]
+STATIC_ROOT = "/var/www/ms_kiersten/static"
+MEDIA_ROOT = "/var/www/ms_kiersten/media"
+ALLOWED_HOSTS = ["mskiersten.com"]
 
 dotenv.load_dotenv("../msk.env")
 
