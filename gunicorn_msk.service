@@ -1,0 +1,8 @@
+[Unit]
+Description = gunicorn instance running mskiersten.com
+
+[Service]
+Type = forking
+ExecStart = /home/jackc/ms_kiersten_wagtail/start_server.sh
+PIDFile = /home/jackc/ms_kiersten_wagtail/gunicorn_pid 
+Restart = always
