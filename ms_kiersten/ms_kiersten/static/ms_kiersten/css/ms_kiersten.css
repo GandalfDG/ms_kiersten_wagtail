@@ -144,7 +144,7 @@ ul, ol {
     width: 80%;
     min-width: 15em;
     max-width: 30em;
-    max-height: auto;
+    max-height: fit-content;
     padding: .5em;
     font-size: medium;
     rotate: -1deg;
