@@ -16,3 +16,5 @@ ALLOWED_HOSTS = ["mskiersten.com"]
 dotenv.load_dotenv("../msk.env")
 
 SECRET_KEY = environ["DJANGO_SECRET_KEY"]
+
+DATABASES["default"]["NAME"] = "/home/jackc/ms_kiersten_wagtail/prod_db.sqlite3"
