@@ -43,6 +43,7 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+        <div class="max-width-container">
         {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
@@ -53,5 +54,6 @@
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
+        </div>
     </body>
 </html>

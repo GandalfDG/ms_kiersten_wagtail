@@ -22,6 +22,10 @@ body {
     background-color: var(--purple-color);
 }
 
+.max-width-container {
+    width: 800px;
+}
+
 .fullpage {
     display: flex;
     flex-direction: column;
