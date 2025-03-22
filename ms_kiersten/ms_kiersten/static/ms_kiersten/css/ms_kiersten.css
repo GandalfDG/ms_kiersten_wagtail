@@ -19,11 +19,22 @@
 }
 
 body {
-    background-color: var(--purple-color);
+    background-color: var(--offwhite-color);
+    margin: 0;
 }
 
 .max-width-container {
-    width: 800px;
+    box-sizing: border-box;
+    background-color: var(--purple-color);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+@media (min-width: 800px) {
+    .max-width-container {
+        max-width: 1000px;
+    }
 }
 
 .fullpage {
