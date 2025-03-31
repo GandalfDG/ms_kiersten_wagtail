@@ -19,7 +19,25 @@
 }
 
 body {
+    background-color: var(--offwhite-color);
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.max-width-container {
+    box-sizing: border-box;
     background-color: var(--purple-color);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 0 0 4px 0;
+}
+
+@media (min-width: 800px) {
+    .max-width-container {
+        max-width: 1000px;
+    }
 }
 
 .fullpage {
@@ -75,12 +93,7 @@ ul, ol {
     }
 }
 
-@media (min-width: 1200px) {
-    body {
-        display: flex;
-        justify-content: space-around;
-    }
-
+/* @media (min-width: 1200px) {
     .main_grid {
         max-width: 1400px;
         grid-template-columns: 20% 10% 40% 30%;
@@ -92,7 +105,7 @@ ul, ol {
 
         row-gap: 2em;
     }
-}
+} */
 
 .name_tag {
     grid-area: nametag;
@@ -403,7 +416,7 @@ h3 {
 .postblock {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: auto 30vw;
+    grid-template-columns: 60% auto;
     grid-template-areas: 
         ". image"
         "title image"
@@ -433,8 +446,8 @@ h3 {
 .postblock img {
     justify-self: center;
     grid-area: image;
-    width: 85%;
     height: auto;
+    max-height: 500px;
     aspect-ratio: 1/1;
 
     margin-inline-end: 1em;
@@ -485,7 +498,7 @@ ol.postlist li:nth-child(even) img {
     }
 
     ol.postlist li:nth-child(odd) .postblock{
-        grid-template-columns: auto 30vw;
+        grid-template-columns: auto 40%;
         grid-template-areas: 
             ". image"
             "title image"
@@ -494,7 +507,7 @@ ol.postlist li:nth-child(even) img {
     }
 
     ol.postlist li:nth-child(even) .postblock{
-        grid-template-columns: 30vw auto;
+        grid-template-columns: 40% auto;
         grid-template-areas: 
         "image ."
         "image title"
@@ -509,13 +522,14 @@ ol.postlist li:nth-child(even) img {
 }
 
 .postimage {
-    max-width: 100%;
-    height: auto;
     aspect-ratio: auto;
+    max-width: 90%;
+    height: auto;
     background-color: var(--offwhite-color);
     padding: 1em;
     box-sizing: border-box;
     box-shadow: var(--drop-shadow);
+    margin-block: 1em;
 }
 
 div.postheader {
@@ -531,13 +545,20 @@ div.postheader {
 article.postcontent {
     background-color: var(--offwhite-color);
     box-sizing: border-box;
-    padding: .5em;
-    width: 100%;
+    padding: 2em 1em;
+    width: 95%;
+}
+
+@media (min-width: 800px) {
+    article.postcontent {
+        width: 80%;
+    }
 }
 
 article.postcontent img {
     max-width: 100%;
     height: auto;
     aspect-ratio: auto;
+    margin-block: 1em;
 }
 
