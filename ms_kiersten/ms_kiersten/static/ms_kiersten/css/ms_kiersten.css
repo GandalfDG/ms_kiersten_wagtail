@@ -498,7 +498,7 @@ ol.postlist li:nth-child(even) img {
     }
 
     ol.postlist li:nth-child(odd) .postblock{
-        grid-template-columns: auto 30vw;
+        grid-template-columns: auto 40%;
         grid-template-areas: 
             ". image"
             "title image"
@@ -507,7 +507,7 @@ ol.postlist li:nth-child(even) img {
     }
 
     ol.postlist li:nth-child(even) .postblock{
-        grid-template-columns: 30vw auto;
+        grid-template-columns: 40% auto;
         grid-template-areas: 
         "image ."
         "image title"
@@ -529,6 +529,7 @@ ol.postlist li:nth-child(even) img {
     padding: 1em;
     box-sizing: border-box;
     box-shadow: var(--drop-shadow);
+    margin-block: 1em;
 }
 
 div.postheader {
@@ -544,7 +545,7 @@ div.postheader {
 article.postcontent {
     background-color: var(--offwhite-color);
     box-sizing: border-box;
-    padding: .5em;
+    padding: 2em 1em;
     width: 95%;
 }
 
@@ -558,5 +559,6 @@ article.postcontent img {
     max-width: 100%;
     height: auto;
     aspect-ratio: auto;
+    margin-block: 1em;
 }
 
