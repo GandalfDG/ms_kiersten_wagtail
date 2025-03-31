@@ -93,7 +93,7 @@ ul, ol {
     }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .main_grid {
         max-width: 1400px;
         grid-template-columns: 20% 10% 40% 30%;
@@ -105,7 +105,7 @@ ul, ol {
 
         row-gap: 2em;
     }
-}
+} */
 
 .name_tag {
     grid-area: nametag;
