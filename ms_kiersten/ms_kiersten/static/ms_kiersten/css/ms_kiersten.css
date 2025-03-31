@@ -416,7 +416,7 @@ h3 {
 .postblock {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: auto 30vw;
+    grid-template-columns: 60% auto;
     grid-template-areas: 
         ". image"
         "title image"
@@ -446,8 +446,8 @@ h3 {
 .postblock img {
     justify-self: center;
     grid-area: image;
-    width: 85%;
     height: auto;
+    max-height: 500px;
     aspect-ratio: 1/1;
 
     margin-inline-end: 1em;
@@ -522,9 +522,6 @@ ol.postlist li:nth-child(even) img {
 }
 
 .postimage {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: auto;
     background-color: var(--offwhite-color);
     padding: 1em;
     box-sizing: border-box;
