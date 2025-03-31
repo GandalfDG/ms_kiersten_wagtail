@@ -522,6 +522,9 @@ ol.postlist li:nth-child(even) img {
 }
 
 .postimage {
+    aspect-ratio: auto;
+    max-width: 90%;
+    height: auto;
     background-color: var(--offwhite-color);
     padding: 1em;
     box-sizing: border-box;
