@@ -416,13 +416,14 @@ h3 {
 .postblock {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: 60% auto;
+    grid-template-columns: 60% 40%;
     grid-template-areas: 
         ". image"
         "title image"
         "summary summary";
 
     margin-block: 1em;
+    width: 100%;
 }
 
 .postblock h3 {
@@ -447,6 +448,7 @@ h3 {
     justify-self: center;
     grid-area: image;
     height: auto;
+    max-width: 100%;
     max-height: 500px;
     aspect-ratio: 1/1;
 
