@@ -44,16 +44,22 @@
 
     <body class="{% block body_class %}{% endblock %}">
         <div class="max-width-container">
-        {% wagtailuserbar %}
+            <div class="fullpage">
+                {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+                {% block content %}{% endblock %}
 
-        {# Global javascript #}
-        {% comment %} <script type="text/javascript" src="{% static 'js/ms_kiersten.js' %}"></script> {% endcomment %}
+                {# Global javascript #}
+                {% comment %} <script type="text/javascript" src="{% static 'js/ms_kiersten.js' %}"></script> {% endcomment %}
 
-        {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
-        {% endblock %}
+                {% block extra_js %}
+                {# Override this in templates to add extra javascript #}
+                {% endblock %}
+
+                <footer>
+                    <p class="copyright">&copy{% now "Y" %} Kiersten Case</p>
+                </footer>
+            </div>
         </div>
     </body>
 </html>
