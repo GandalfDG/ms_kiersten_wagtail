@@ -11,7 +11,8 @@
         <p>{{ page.first_published_at }}</p>
     </div>
     <article class="postcontent">
-        {{ page.post_summary|richtext }}
+        <strong>{{ page.post_summary|richtext }}</strong>
+        <hr>
         {{ page.post_content|richtext }}
     </article>
 </div>
