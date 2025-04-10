@@ -3,6 +3,10 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
+{% block navigation %}
+<a href={% pageurl parent_page %}>back</a>
+{% endblock %}
+
 {% block content %}
 <div class="contentpage">
     {% image page.post_cover_image max-500x500 class="postimage" %}
