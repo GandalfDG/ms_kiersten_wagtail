@@ -4,6 +4,8 @@ from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel
 
+from home.models import HomePage
+
 
 class AlbumPage(Page):
     album_title = models.TextField()
@@ -55,5 +57,6 @@ class BlogPost(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["parent_page"] = Page.objects.parent_of(self).first()
+        context["root_page"] = Page.objects.type(HomePage).first()
 
         return context
