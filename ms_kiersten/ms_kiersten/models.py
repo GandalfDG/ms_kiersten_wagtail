@@ -54,6 +54,6 @@ class BlogPost(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["parent_page"] = self.get_ancestors().type(BlogList).last()
+        context["parent_page"] = Page.objects.parent_of(self).first()
 
         return context
