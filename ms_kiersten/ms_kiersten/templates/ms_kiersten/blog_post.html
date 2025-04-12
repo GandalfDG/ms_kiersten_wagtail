@@ -4,8 +4,12 @@
 {% load wagtailimages_tags %}
 
 {% block navigation %}
-<a href={% pageurl parent_page %}>back</a>
-<a href={% pageurl root_page %}>home</a>
+<a href={% pageurl parent_page %}>
+    <box-icon name='arrow-back' size="lg"></box-icon>
+</a>
+<a href={% pageurl root_page %}>
+    <box-icon name='home' size="lg"></box-icon>
+</a>
 {% endblock %}
 
 {% block content %}
