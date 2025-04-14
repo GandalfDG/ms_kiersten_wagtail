@@ -4,16 +4,19 @@
 {% load wagtailimages_tags %}
 
 {% block navigation %}
-<a href={% pageurl parent_page %}>
-    <box-icon name='arrow-back' size="lg"></box-icon>
-</a>
-<a href={% pageurl root_page %}>
-    <box-icon name='home' size="lg"></box-icon>
-</a>
+
 {% endblock %}
 
 {% block content %}
 <div class="contentpage">
+    <nav class="post-nav">
+        <a href={% pageurl parent_page %}>
+            <box-icon name='arrow-back' size="md"></box-icon>
+        </a>
+        <a href={% pageurl root_page %}>
+            <box-icon name='home' size="md"></box-icon>
+        </a>
+    </nav>
     {% image page.post_cover_image max-500x500 class="postimage" %}
     <div class="postheader">   
         <h1>{{ page.title }}</h1>
