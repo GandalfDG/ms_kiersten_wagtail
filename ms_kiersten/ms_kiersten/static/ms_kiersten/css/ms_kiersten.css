@@ -220,7 +220,7 @@ ul, ol {
     text-align: center;
 }
 
-.nav_links box-icon {
+.nav_links box-icon, .post-nav box-icon {
     padding: .2em;
     align-self: center;
     fill: var(--orange-color)
@@ -521,6 +521,22 @@ ol.postlist li:nth-child(even) img {
         margin-inline: 1em 0;
     }
 
+}
+
+.post-nav {
+    box-sizing: content-box;
+    position: fixed;
+    bottom: 3em;
+    left: 3em;
+    color: var(--orange-color)
+}
+
+.post-nav a {
+    display: inline-block;
+    padding: .3em;
+    margin-inline: .1em;
+    background-color: var(--yellow-color);
+    box-shadow: var(--drop-shadow);
 }
 
 .postimage {

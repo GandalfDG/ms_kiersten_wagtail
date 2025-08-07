@@ -47,6 +47,10 @@
             <div class="fullpage">
                 {% wagtailuserbar %}
 
+                {% comment %} <nav>
+                {% block navigation %}{% endblock %}
+                </nav> {% endcomment %}
+
                 {% block content %}{% endblock %}
 
                 {# Global javascript #}

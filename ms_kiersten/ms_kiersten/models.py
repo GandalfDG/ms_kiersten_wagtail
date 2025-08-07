@@ -4,6 +4,8 @@ from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel
 
+from home.models import HomePage
+
 
 class AlbumPage(Page):
     album_title = models.TextField()
@@ -21,20 +23,6 @@ class AlbumPage(Page):
     ]
 
 
-class BlogPost(Page):
-    post_summary = RichTextField()
-
-    post_cover_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL,
-                                         related_name="+", null=True)
-
-    post_content = RichTextField()
-
-    content_panels = Page.content_panels + [
-        FieldPanel("post_cover_image"),
-        FieldPanel("post_summary"),
-        FieldPanel("post_content")
-    ]
-
 
 class BlogList(Page):
     blog_headline = RichTextField()
@@ -51,3 +39,24 @@ class BlogList(Page):
     ]
 
     subpage_types = ["ms_kiersten.BlogPost"]
+
+class BlogPost(Page):
+    post_summary = RichTextField()
+
+    post_cover_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL,
+                                         related_name="+", null=True)
+
+    post_content = RichTextField()
+
+    content_panels = Page.content_panels + [
+        FieldPanel("post_cover_image"),
+        FieldPanel("post_summary"),
+        FieldPanel("post_content")
+    ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["parent_page"] = Page.objects.parent_of(self).first()
+        context["root_page"] = Page.objects.type(HomePage).first()
+
+        return context
