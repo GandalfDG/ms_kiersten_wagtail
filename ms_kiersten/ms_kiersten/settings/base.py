@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "home",
     "search",
     "ms_kiersten",
+    "kindermusik",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
