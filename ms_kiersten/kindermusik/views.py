@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
 import stripe
 
@@ -17,10 +17,10 @@ def stripe_purchase_deposit(request):
                 }
             ],
             mode='payment',
-            success_url=None,
-            cancel_url=None
+            success_url="http://google.com",
+            cancel_url="http://google.com"
         )
     except Exception as e:
-        return str(e)
+        return HttpResponse(e)
     
     return HttpResponseRedirect(checkout_session.url)
