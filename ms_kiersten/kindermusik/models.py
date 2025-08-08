@@ -9,7 +9,13 @@ class KinderHome(Page):
     headline = models.TextField()
     subheading = models.TextField()
 
-    hero_image = models.ImageField()
+    hero_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     main_content = RichTextField()
 
