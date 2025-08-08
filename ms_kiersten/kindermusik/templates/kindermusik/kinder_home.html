@@ -16,10 +16,11 @@
     <div class="main_grid">
 
         <div class="introduction">
-            {{ page.headline|richtext }}
+            <h1>{{ page.headline }}</h1>
+            <h2>{{ page.subheading }}</h2>
         </div>
 
-        
+        {% image page.hero_image width-400 %}
 
 
         <div class="content-box">
