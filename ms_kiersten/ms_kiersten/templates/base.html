@@ -24,7 +24,10 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'ms_kiersten/css/ms_kiersten.css' %}">
+        {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+            <link rel="stylesheet" type="text/css" href="{% static 'ms_kiersten/css/ms_kiersten.css' %}">
+        {% endblock %}
 
         <!-- Fonts and Icons -->
         <link rel="icon" href="{% static "ms_kiersten/icons/favicon.ico" %}">
@@ -37,9 +40,6 @@
         <!-- Umami Analytics -->
         <script defer src="https://cloud.umami.is/script.js" data-website-id="e8d54d75-f646-4b54-96e4-097d9fc757a2"></script>
 
-        {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
