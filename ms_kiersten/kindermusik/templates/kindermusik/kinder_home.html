@@ -7,30 +7,21 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'ms_kiersten/css/kindermusik.css' %}">
+<link rel="stylesheet" href="{% static 'kindermusik/css/kindermusik.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
 
+{% image page.hero_image width-800 %}
+<hgroup>
+    <h1>{{ page.headline }}</h1>
+    <h2>{{ page.subheading }}</h2>
+</hgroup>
 
-    <div class="main_grid">
-
-        <div class="introduction">
-            <h1>{{ page.headline }}</h1>
-            <h2>{{ page.subheading }}</h2>
-        </div>
-
-        {% image page.hero_image width-400 %}
-
-
-        <div class="content-box">
-            <article class="content">
-                {{ page.main_content|richtext }}
-            </article>
-        </div>
-
-    </div>
-
-
+<div class="content-box">
+    <article class="content">
+        {{ page.main_content|richtext }}
+    </article>
+</div>
 
 {% endblock content %}
